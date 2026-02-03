@@ -1,4 +1,24 @@
-<h2>ATS Analysis Result</h2>
-<p><b>Skills Found:</b> {{ skills }}</p>
-<p><b>ATS Score:</b> {{ score }}%</p>
-<a href="/">Go Back</a>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATS Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Resume Analysis Result</h2>
+
+        <p><strong>Skills Found:</strong></p>
+        <ul>
+            {% for skill in skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+
+        <p><strong>ATS Score:</strong> {{ score }}%</p>
+
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>

@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AI Interview Prep</title>
+    <title>AI Interview Preparation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <h2>Upload Resume</h2>
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="resume" required>
-        <button type="submit">Analyze</button>
-    </form>
 
-    <h2>Mock Interview</h2>
-    <form action="/interview" method="POST">
-        <textarea name="answer" placeholder="Explain Machine Learning"></textarea>
-        <button type="submit">Submit Answer</button>
-    </form>
+<body>
+    <div class="container">
+        <h2>AI Interview Preparation Platform</h2>
+
+        <h3>Resume ATS Analysis</h3>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="resume" required>
+            <button type="submit">Analyze Resume</button>
+        </form>
+
+        <hr>
+
+        <h3>Mock Interview</h3>
+        <form action="/interview" method="POST">
+            <textarea name="answer" placeholder="Explain Machine Learning" required></textarea>
+            <button type="submit">Submit Answer</button>
+        </form>
+    </div>
 </body>
 </html>
